@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Todo() {
     const [tasks, setTasks] = useState([])
-    const [task, setTask] = useState('')
+    const [task, setTask] = useState('Enter your task')
     const [isCompleted, setIsCompleted] = useState(false)
 
     const handleChange = (e) => {
@@ -55,25 +55,25 @@ function Todo() {
 
     return (
         <>
-            <div>
-                This is Todo component
+            <div style={{fontSize: '50px', fontWeight: '600', margin: '10px'}}>
+                This is Todo App
+            </div>
+            <div style={{ display: 'flex', alingItems: "center", justifyContent: 'center', width: '100%', gap: '10px', marginTop:'30px',height:'40px' }} >
+                <input type="text" onChange={handleChange} value={task} style={{width:'500px',fontSize:'20px'}} />
+                <button onClick={addTask} style={{borderRadius:'10px',width:'50px', fontSize:'20px'}} >Add</button>
             </div>
             <div>
-                <input type="text" onChange={handleChange} value={task}  />
-                <button onClick={addTask}>Add</button>
-            </div>
-            <div>
-            {localStorage.getItem('tasks') && JSON.parse(localStorage.getItem('tasks')).length === 0 ? <div style={{ display: 'flex', alingItems: "center", justifyContent: 'center', width: '100%', gap: '10px', marginTop:'10px' }} >No tasks</div> :
+            {JSON.parse(localStorage.getItem('tasks')).length === 0 ? <div style={{ display: 'flex', alingItems: "center", justifyContent: 'center', width: '100%', gap: '10px', marginTop:'10px' }} >No tasks</div> :
                 <ul >
-                    {localStorage.getItem('tasks') && JSON.parse(localStorage.getItem('tasks')).map((task) => (
+                    {JSON.parse(localStorage.getItem('tasks')).map((task) => (
                         <div style={{ display: 'flex', alingItems: "center", justifyContent: 'center', width: '100%', gap: '10px' }} key={task.id}>
-                            <input type="checkbox" checked={task.isCompleted} onChange={() => checkTask(task.id)} />
-                            <li key={task.id} style={{ listStyle: 'none', display: 'flex', justifyContent: "space-between", width: '50%', marginTop:'10px' }}> <span style={{ textDecoration: task.isCompleted ? 'line-through' : 'none' }}>
+                            <input type="checkbox" checked={task.isCompleted} onChange={() => checkTask(task.id)} value={task} minLength={3} />
+                            <li key={task.id} style={{ listStyle: 'none', display: 'flex', justifyContent: "space-between", width: '50%', marginTop:'10px' }}> <span style={{ textDecoration: task.isCompleted ? 'line-through' : 'none', color: task.isCompleted ? 'black' : 'gray',textAlign:'left'}} >
                                 {task.text}
                                 </span>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px' }}>
-                                    <button onClick={() => handleEdit(task.id)}>edit</button>
-                                    <button onClick={() => handleDelete(task.id)}>delete</button>
+                                    <button style={{height: '30px'}} onClick={() => handleEdit(task.id)}>edit</button>
+                                    <button style={{height: '30px'}} onClick={() => handleDelete(task.id)}>delete</button>
                                 </div>
                             </li>
                         </div>
