@@ -1,0 +1,77 @@
+.body{
+    background-color: rgb(62, 62, 209);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* filter: blur(5px); */
+}
+
+.mainContainer{
+    position:absolute;
+    padding: 30px;
+    background-color: aqua;
+}
+
+.container{
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    height: auto;
+    z-index: 1;
+}
+h1{
+    color: black;
+    text-align: center;
+    /* filter:blur(10px); */
+}
+
+.inputField{
+    border-bottom:3px solid black;
+    display: flex;
+    gap:10px;
+    margin:10px;
+    padding-bottom: 8px;
+    /* border-radius: 10px; */
+}
+input{
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.forgotSection{
+    display: flex;
+    gap:20px;
+    font-size: 20px;
+    text-align: center;
+    gap:10px;
+}
+
+.forgotButton{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.loginButton{
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.registerSection{
+    /* display: flex; */
+    font-size: 20px;
+    text-align: center;
+    gap:10px;
+}
+
+.registerButton{
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
