@@ -1,5 +1,6 @@
 .body{
-    background-color: rgb(62, 62, 209);
+    background-image: url('../public/shur-shu-kKvQJ6rK6S4-unsplash.jpg');
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -11,17 +12,20 @@
 .mainContainer{
     position:absolute;
     padding: 30px;
-    background-color: aqua;
+    background-color: rgba(254, 254, 254, 0.283);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
 }
 
 .container{
-    z-index: 1;
-    backdrop-filter: blur(10px);
+    /* z-index: 1; */
+    /* background-color: rgba(240, 248, 255, 0.578);
+    backdrop-filter: blur(10px); */
     display: flex;
     gap:20px;
     flex-direction: column;
     height: auto;
-    z-index: 1;
+    /* z-index: 1; */
 }
 h1{
     color: black;
@@ -55,12 +59,14 @@ input{
     font-size: 20px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .loginButton{
     padding: 10px;
     border-radius: 8px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .registerSection{
@@ -74,4 +80,5 @@ input{
     font-size: 20px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
