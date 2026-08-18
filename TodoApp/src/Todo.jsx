@@ -7,6 +7,8 @@ function Todo() {
     const [task, setTask] = useState('Enter your task')
     const [isCompleted, setIsCompleted] = useState(false)
 
+    
+
     const handleChange = (e) => {
         setTask(e.target.value)
         
@@ -60,7 +62,7 @@ function Todo() {
             </div>
             <div style={{ display: 'flex', alingItems: "center", justifyContent: 'center', width: '100%', gap: '10px', marginTop:'30px',height:'40px' }} >
                 <input type="text" onChange={handleChange} value={task} style={{width:'500px',fontSize:'20px'}} />
-                <button onClick={addTask} style={{borderRadius:'10px',width:'50px', fontSize:'20px'}} >Add</button>
+                <button onClick={addTask} disabled={task.length<=3} style={{borderRadius:'10px',width:'50px', fontSize:'20px'}} >Add</button>
             </div>
             <div>
             {JSON.parse(localStorage.getItem('tasks')).length === 0 ? <div style={{ display: 'flex', alingItems: "center", justifyContent: 'center', width: '100%', gap: '10px', marginTop:'10px' }} >No tasks</div> :
